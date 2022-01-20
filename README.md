@@ -22,6 +22,7 @@ Developed by: M.Hariharan
 RegisterNumber: 21005392
 '''
 import numpy as np
+import matplotlib.pyplot as plt
 X = np.array(eval(input()))
 Y = np.array(eval(input()))
 X_mean=np.mean(X)
@@ -33,9 +34,12 @@ for i in range (len(X)):
     den+=(X[i]-X_mean)**2
 m=num/den
 c=Y_mean-(m*X_mean)
-print (m, c)
+print(m,c)
 Y_pred=m*X+c
-print (Y_pred)
+print(Y_pred)
+plt.scatter(X,Y)
+plt.plot(X,Y_pred, color='pink')
+plt.show()
 
 ```
 ## Output
